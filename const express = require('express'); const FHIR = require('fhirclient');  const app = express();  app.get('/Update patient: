@@ -1,0 +1,7 @@
+app.put('/patients/:id', async (req, res) => {
+    const client = new FHIR();
+    const id = req.params.id;
+    const updatedPatient = req.body; // Assuming request body contains updated patient details
+    await client.update({ resourceType: 'Patient', id, body: updatedPatient });
+    res.send('Patient updated successfully');
+});
