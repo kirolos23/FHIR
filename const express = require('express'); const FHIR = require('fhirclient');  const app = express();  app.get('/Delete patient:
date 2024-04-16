@@ -1,0 +1,6 @@
+app.delete('/patients/:id', async (req, res) => {
+    const client = new FHIR();
+    const id = req.params.id;
+    await client.delete({ resourceType: 'Patient', id });
+    res.send('Patient deleted successfully');
+});
