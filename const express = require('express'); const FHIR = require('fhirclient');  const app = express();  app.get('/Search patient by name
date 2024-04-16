@@ -1,6 +1,0 @@
-app.get('/patients/search/:name', async (req, res) => {
-    const client = new FHIR();
-    const name = req.params.name;
-    const patients = await client.search({ resourceType: 'Patient', name });
-    res.json(patients);
-});
