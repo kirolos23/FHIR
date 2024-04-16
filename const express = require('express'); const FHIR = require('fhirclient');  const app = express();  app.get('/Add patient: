@@ -1,6 +1,0 @@
-app.post('/patients', async (req, res) => {
-    const client = new FHIR();
-    const newPatient = req.body; // Assuming request body contains patient details
-    const createdPatient = await client.create(newPatient);
-    res.json(createdPatient);
-});
